@@ -17,7 +17,7 @@ class Button extends React.Component {
       [style.tertiary]: this.props.type === type.TERTIARY,
       [style.loading]: this.props.loading,
       [style.disabled]: this.props.disabled,
-    });
+    }, this.props.className);
 
     let loaderDotStyle;
     if (
@@ -41,7 +41,7 @@ class Button extends React.Component {
 
     return (
       <button
-        className={cx(buttonStyle)}
+        className={buttonStyle}
         style={this.props.style}
         onClick={this.props.onClick}
         type={buttonType}
