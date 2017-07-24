@@ -18,10 +18,16 @@ class Tabs extends React.Component {
     }
   }
   render() {
+    const { vertical } = this.props;
+
+    const outerStyle = cn(style.tabs, {
+      [style.vertical]: vertical,
+    });
+
     return (
       <ul
         {...getDataAttrs(this.props.data)}
-        className={style.tabs}
+        className={outerStyle}
         role="tablist"
       >
         { map(this.props.items, (tab, index) => {
@@ -64,6 +70,7 @@ Tabs.propTypes = {
   onChange: PropTypes.func.isRequired,
   selectedIndex: PropTypes.number,
   selectedLabel: PropTypes.string,
+  vertical: PropTypes.bool,
   ...getDataProps(),
 };
 

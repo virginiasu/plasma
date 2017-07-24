@@ -15,6 +15,7 @@ class TabsWithLabelState extends React.Component {
 
   render() {
     return <Tabs
+      vertical={this.props.vertical}
       selectedLabel={this.state.selectedLabel}
       onChange={selectedLabel => this.setState({ selectedLabel })}
       items={this.props.items}
@@ -111,6 +112,16 @@ storiesOf('Tabs', module)
         { title: 'Bye bye', label: 'bye' },
       ]}
     />
+  ))
+  .add('vertical', () => (
+    <div style={{ width: '300px' }}>
+      <TabsWithLabelState
+        vertical
+        items={[
+          { title: 'Hello', label: 'hello' },
+          { title: 'World', label: 'world' },
+          { title: 'Bye bye', label: 'bye' },
+        ]}
+      />
+    </div>
   ));
-
-

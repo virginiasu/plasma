@@ -4,6 +4,9 @@
   padding: 14px 0 0 14px; /* so first tab aligns with labels */
   border-bottom: 1px solid $cGray200;;
   list-style: none;
+  &.vertical {
+    border: 0;
+  }
 }
 
 .tab {
@@ -41,5 +44,17 @@
   &.active {
     background-color: $cGray600;
     border-bottom: 1px solid $cGray600;
+  }
+}
+
+.vertical .tab {
+  position: static;
+  display: block;
+  border-radius: 0;
+  border: 0;
+  background-color: transparent;
+  &.active {
+    border-radius: 3px;
+    background-color: $cGray30;
   }
 }
